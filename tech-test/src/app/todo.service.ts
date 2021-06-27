@@ -53,7 +53,7 @@ export class TodoService {
     })
   }
 
-  getAll() {
+  getAllTodos() {
     const url = apiUrl + "/tasks/";
     this.http.get(url)
     .pipe(take(1))

@@ -1,6 +1,9 @@
 <div class="container">
     <div class="list-container">
         <h1>Tom's Todo List</h1>
+        <div class="filter-container">
+            <input type="search" placeholder="Filter todos" [(ngModel)]="filterString" (ngModelChange)="filterStringChange.next()">
+        </div>
         <div class="new-todo">
             <input
                 class="new-todo-input"
@@ -11,7 +14,7 @@
             <button (click)="createTodo(newTodo)">➕</button>
         </div>
         <todo-item
-            *ngFor="let todo of (todos$|async); trackBy: trackByFn"
+            *ngFor="let todo of fitleredTodos; trackBy: trackByFn"
             [todo]="todo"
             (update)="updateTodo($event)"
             (remove)="deleteTodo($event)">

@@ -4,17 +4,30 @@
 h1 {
   text-align: center;
 }
-.new-todo {
-  margin: 10px auto;
+.new-todo,
+.filter-container{
+  margin: auto;
   width: 300px;
   position: relative;
   input {
-    font-size: 1.5em;
     line-height: 1em;
     width: 100%;
-    padding: 2px 45px 2px 4px;
+    padding: 2px 4px;
     border:none;
     border-bottom: 1px solid grey;
+  }
+}
+.filter-container{
+  margin-bottom: 2em;
+  input {
+    font-size: 1em;
+  }
+}
+.new-todo {
+  margin-bottom: 1em;
+  input {
+    font-size: 1.5em;
+    padding: 2px 45px 2px 4px;
   }
   button {
     position: absolute;

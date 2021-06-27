@@ -5,7 +5,7 @@
       "label": "Taxes",
       "description": "Start doing my taxes and contact my accountant john for advice ",
       "category": "bureaucracy",
-      "done": null
+      "done": "date"
     },
     {
       "id": 3,
@@ -15,11 +15,11 @@
       "done": "date"
     },
     {
-      "id": 7,
+      "id": 4,
       "label": null,
-      "description": "test",
+      "description": "add one",
       "category": null,
-      "done": "date"
+      "done": null
     }
   ]
 }

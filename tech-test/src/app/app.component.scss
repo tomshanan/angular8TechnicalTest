@@ -1,7 +1,10 @@
-.title-text{
-  font-size: 20px;
-  line-height: 1.5;
-  color: #20364b;
-  font-weight: 600;
-  font-family: 'ProximaNova', sans-serif;
-}
+  .container {
+    overflow: auto;
+  }
+  .list-container {
+    background-color: white;
+    width: clamp(400px, 600px, 100%);
+    margin: 100px auto;
+    padding: 20px;
+    box-shadow: 4px 4px 20px -3px #00000061;
+  }

@@ -1,5 +1,5 @@
 .container {
-  overflow: auto;
+  padding-top: 100px;
 }
 h1 {
   text-align: center;
@@ -42,9 +42,8 @@ h1 {
   position: relative;
   background-color: white;
   width: clamp(400px, 600px, 100%);
-  margin: 100px auto;
-  padding: 20px;
-  padding-bottom: 50px;
+  margin: 0px auto;
+  padding: 20px 20px 50px 20px;
   z-index: 1;
   box-shadow: 4px 4px 20px -3px #00000061;
 

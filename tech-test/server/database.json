@@ -5,21 +5,21 @@
       "label": "Taxes",
       "description": "Start doing my taxes and contact my accountant john for advice ",
       "category": "bureaucracy",
-      "done": "date"
+      "done": null
     },
     {
       "id": 3,
       "label": null,
       "description": "Another test - change text",
       "category": null,
-      "done": "date"
+      "done": null
     },
     {
       "id": 4,
       "label": null,
       "description": "add one",
       "category": null,
-      "done": null
+      "done": "date"
     }
   ]
 }

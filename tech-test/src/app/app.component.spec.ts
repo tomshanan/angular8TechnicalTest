@@ -20,16 +20,45 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'tech-test'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('tech-test');
-  });
+ 
+  it('Should allow adding todo list items when using the input', ()=>{
+    /* TODO: 
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('tech-test app is running!');
-  });
+      create stub for todoService service with an add method
+      get component instance, pass stub
+      add text to new todo input field
+      tick over
+      check if the allTodos array has a todo with matching string
+      check if the dom has an a todo with a matching string
+    */
+  })
+
+  it('Should allow filtering the todo list when using the input', ()=>{
+    /* TODO: 
+
+      get component instance
+      add text to filter input field
+      tick over
+      check if the list of filteredTodos has a todo with matching string
+    */
+  })
+
+  it('Should remove todos from the list of todos', ()=>{
+    /* TODO: 
+      create stub for todoService service with list of todos, and a remove method
+      get component instance, pass stub
+      call the deleteTodo method with one of the todos
+      expect the allTodos array to not have a matching id
+      expect the dom to not show the todo
+    */
+  })
+  it('Should update todos when modified', ()=>{
+    /* TODO: 
+      create stub for todoService service with list of todos, and an update method
+      get component instance, pass stub
+      call the updateTodo method with one of the todos, and modified "done" and "description"
+      expect the allTodos to include a todo with the same "done" and "description" states
+      expect the dom to display a todo with a checked checkbox and the matching description
+    */
+  })
 });

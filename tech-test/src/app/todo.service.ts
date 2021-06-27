@@ -17,6 +17,8 @@ export class TodoService {
     private http: HttpClient
   ) { }
 
+  /* TODO: Add error handling with a toaster errors, and reverting state [TS 27/06/21] */
+
   updateTodo(todo:Todo) {
     const url = apiUrl + "/tasks/" + todo.id;
     this.http.patch(url, todo)
@@ -59,7 +61,10 @@ export class TodoService {
     .pipe(take(1))
     .toPromise()
     .then((tasks: Todo[])=>{
-      console.log(tasks)
+      // sort on arrival only
+      tasks.sort((a,b) => {
+        return (a.done && !b.done) ? 1 : -1;
+      })
       this.todos$.next(tasks)
     })
   }

@@ -14,7 +14,7 @@
             <button (click)="createTodo(newTodo)">➕</button>
         </div>
         <todo-item
-            *ngFor="let todo of fitleredTodos; trackBy: trackByFn"
+            *ngFor="let todo of filteredTodos; trackBy: trackByFn"
             [todo]="todo"
             (update)="updateTodo($event)"
             (remove)="deleteTodo($event)">

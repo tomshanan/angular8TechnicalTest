@@ -19,6 +19,7 @@ export class TodoItemComponent implements OnInit, OnChanges {
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
     if(this.todo){
+      // enable the ui when a new todo is passed in
       this.updating = false;
     }
   }
@@ -28,12 +29,15 @@ export class TodoItemComponent implements OnInit, OnChanges {
 
   edit(){
     this.editMode = true
+    // reset todo input
     this.todoInput = this.todo.description
   }
 
   confirm(){
     this.editMode = false
+     // disable the UI while confirming changes with the backend
     this.updating = true;
+    // override the todo, until the confirmed state is passed in again
     this.todo = {...this.todo, description: this.todoInput}
     this.updateEvent.emit(this.todo)
   }

@@ -11,7 +11,7 @@ import { TodoService } from './todo.service';
 })
 export class AppComponent implements OnInit {
   allTodos: Todo[];
-  fitleredTodos: Todo[];
+  filteredTodos: Todo[];
 
   filterString: string = '';
   filterStringChange = new Subject<void>()
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
       this.allTodos = todos;
       // resets filter
       this.filterString = '';
-      this.fitleredTodos = this.allTodos
+      this.filteredTodos = this.allTodos
     })
 
     this.filterStringChange
@@ -45,11 +45,11 @@ export class AppComponent implements OnInit {
   filterTodos() {
     let normalisedString = this.filterString != null ? this.filterString.toLowerCase().trim() : "";
     if (normalisedString != '') {
-      this.fitleredTodos = this.allTodos.filter(todo => {
+      this.filteredTodos = this.allTodos.filter(todo => {
         return todo.description.toLowerCase().trim().includes(normalisedString)
       })
     } else {
-      this.fitleredTodos = this.allTodos
+      this.filteredTodos = this.allTodos
     }
   }
 

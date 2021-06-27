@@ -1,5 +1,18 @@
 <div class="container">
     <div class="list-container">
-            <h1>Tom's Todo List</h1>
+        <h1>Tom's Todo List</h1>
+        <div class="new-todo">
+            <input
+                class="new-todo-input"
+                type="text"
+                (keydown.enter)="createTodo(newTodo)"
+                [(ngModel)]="newTodo">
+            <button (click)="createTodo(newTodo)">Test add</button>
+        </div>
+
+        <p *ngFor="let todo of (todos$|async); trackBy: trackByFn">
+            {{todo.description }}
+            <button (click)="deleteTodo(todo)">delete</button>
+        </p>
     </div>
 </div>

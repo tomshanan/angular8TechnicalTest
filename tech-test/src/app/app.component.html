@@ -9,10 +9,11 @@
                 [(ngModel)]="newTodo">
             <button (click)="createTodo(newTodo)">Test add</button>
         </div>
-
-        <p *ngFor="let todo of (todos$|async); trackBy: trackByFn">
-            {{todo.description }}
-            <button (click)="deleteTodo(todo)">delete</button>
-        </p>
+        <todo-item
+            *ngFor="let todo of (todos$|async); trackBy: trackByFn"
+            [todo]="todo"
+            (update)="updateTodo($event)"
+            (remove)="deleteTodo($event)">
+        </todo-item>
     </div>
 </div>

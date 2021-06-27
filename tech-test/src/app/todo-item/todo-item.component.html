@@ -1,0 +1,11 @@
+<div class="todo-item-wrapper" [class.updating]="updating">
+    <input type="checkbox" [checked]="!!todo.done" *ngIf="!editMode" [disabled]="updating" (change)="onCheck()">
+    <button *ngIf="editMode" (click)="remove()" [disabled]="updating">🗑️</button>
+    <span *ngIf="!editMode">
+        {{todo.description}}
+    </span>
+    <input type="text" [(ngModel)]="todoInput" *ngIf="editMode" [disabled]="updating">
+    <button *ngIf="!editMode" (click)="edit()" [disabled]="updating">✏️</button>
+    <button *ngIf="editMode" (click)="confirm()" [disabled]="updating">✔️</button>
+    <button *ngIf="editMode" (click)="cancel()" [disabled]="updating">✖️</button>
+</div>

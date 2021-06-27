@@ -5,9 +5,10 @@
             <input
                 class="new-todo-input"
                 type="text"
+                placeholder="Things to do..."
                 (keydown.enter)="createTodo(newTodo)"
                 [(ngModel)]="newTodo">
-            <button (click)="createTodo(newTodo)">Test add</button>
+            <button (click)="createTodo(newTodo)">➕</button>
         </div>
         <todo-item
             *ngFor="let todo of (todos$|async); trackBy: trackByFn"

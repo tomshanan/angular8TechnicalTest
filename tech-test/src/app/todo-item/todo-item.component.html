@@ -1,11 +1,19 @@
 <div class="todo-item-wrapper" [class.updating]="updating">
-    <input type="checkbox" [checked]="!!todo.done" *ngIf="!editMode" [disabled]="updating" (change)="onCheck()">
-    <button *ngIf="editMode" (click)="remove()" [disabled]="updating">🗑️</button>
-    <span *ngIf="!editMode">
+    <div class="button-wrapper">
+        <button *ngIf="editMode" (click)="remove()" [disabled]="updating">🗑️</button>
+    </div>
+    <div class="checkbox-wrapper" *ngIf="!editMode">
+        <input id="todo-{{todo.id}}" type="checkbox" [checked]="!!todo.done" [disabled]="updating" (change)="onCheck()">
+    </div>
+    <label *ngIf="!editMode" for="todo-{{todo.id}}" class="description">
         {{todo.description}}
-    </span>
-    <input type="text" [(ngModel)]="todoInput" *ngIf="editMode" [disabled]="updating">
-    <button *ngIf="!editMode" (click)="edit()" [disabled]="updating">✏️</button>
-    <button *ngIf="editMode" (click)="confirm()" [disabled]="updating">✔️</button>
-    <button *ngIf="editMode" (click)="cancel()" [disabled]="updating">✖️</button>
+    </label>
+    <div class="input-wrapper">
+        <input type="text" [(ngModel)]="todoInput" *ngIf="editMode" [disabled]="updating" class="todo-input">
+    </div>
+    <div class="button-wrapper">
+        <button *ngIf="!editMode" (click)="edit()" [disabled]="updating">✏️</button>
+        <button *ngIf="editMode" (click)="confirm()" [disabled]="updating">✔️</button>
+        <button *ngIf="editMode" (click)="cancel()" [disabled]="updating">✖️</button>
+    </div>
 </div>

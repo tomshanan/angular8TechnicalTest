@@ -1,10 +1,44 @@
 .container {
   overflow: auto;
 }
+h1 {
+  text-align: center;
+}
+.new-todo {
+  margin: 10px auto;
+  width: 300px;
+  position: relative;
+  input {
+    font-size: 1.5em;
+    line-height: 1em;
+    width: 100%;
+    padding: 2px 45px 2px 4px;
+    border:none;
+    border-bottom: 1px solid grey;
+  }
+  button {
+    position: absolute;
+    background: transparent;
+    border: none;
+    width: 40px;
+    right: 0px;
+    height: 100%;
+  }
+}
 .list-container {
+  position: relative;
   background-color: white;
   width: clamp(400px, 600px, 100%);
   margin: 100px auto;
   padding: 20px;
+  padding-bottom: 50px;
+  z-index: 1;
   box-shadow: 4px 4px 20px -3px #00000061;
+
+  todo-item {
+    display: block;
+    --border-color: rgb(215, 229, 233);
+    padding: 10px 0px;
+    border-bottom: 1px solid var(--border-color);
+  }
 }

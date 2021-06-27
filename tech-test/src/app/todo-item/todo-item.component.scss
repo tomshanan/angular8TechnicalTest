@@ -2,13 +2,22 @@
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    transition: opacity 200ms ease;
+    &.updating{
+        opacity: .4;
+    }
+    .input-wrapper,
+    .description{
+        flex: 1 1 auto;
+    }
+    .todo-input{
+        width: 100%;
+    }
 }
-
-.updating{
-    opacity: .4;
-}
-button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
+.button-wrapper{
+    button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
 }
